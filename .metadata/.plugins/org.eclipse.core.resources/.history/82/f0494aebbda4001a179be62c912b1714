@@ -1,0 +1,16 @@
+package com.tcs.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.tcs.beans.Car;
+
+@Configuration
+public class RootConfig {
+
+	@Bean
+	public Car getInstance() {
+		Car car=new Car();
+		return car;
+	}
+}

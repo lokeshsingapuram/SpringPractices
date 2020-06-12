@@ -1,0 +1,11 @@
+package com.tcs.reader;
+
+
+
+import org.springframework.stereotype.Component;
+@Component
+public class ProductReader {
+	
+
+
+}

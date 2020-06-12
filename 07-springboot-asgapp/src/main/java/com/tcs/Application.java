@@ -1,0 +1,32 @@
+package com.tcs;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.tcs.reader.ProductReader;
+import com.tcs.writer.ProductWriter;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+		try {
+			ProductReader reader = context.getBean(ProductReader.class);
+			List<String> readers=reader.getProductReaders();
+			ProductWriter writeProduct=context.getBean(ProductWriter.class);
+			List<String> writer=((ProductWriter) writeProduct).saveProduct(readers);
+			
+		
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

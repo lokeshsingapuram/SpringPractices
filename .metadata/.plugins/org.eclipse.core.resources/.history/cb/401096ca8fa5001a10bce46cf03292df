@@ -1,0 +1,27 @@
+package com.tcs;
+
+import java.io.IOException;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.tcs.reader.ProductReader;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+		ProductReader reader = context.getBean(ProductReader.class);
+		try {
+			reader.getProductReaders();
+			System.out.println("sucess");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

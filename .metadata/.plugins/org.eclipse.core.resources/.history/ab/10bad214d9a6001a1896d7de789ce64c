@@ -1,0 +1,29 @@
+package com.tcs.reader;
+
+
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.springframework.stereotype.Component;
+
+import com.tcs.beans.Product;
+@Component
+public class ProductReader {
+
+	
+public List<Product> getProductReaders() throws IOException{
+	
+try(Stream<String> lines=Files.lines(Paths.get("src\\main\\resources\\input.txt"))){
+	List<List<String>> values = lines.map(line -> Arrays.asList(line.split(","))).collect(Collectors.toList());
+	values.forEach(value -> System.out.println(value));
+};
+
+return lines;
+}
+}

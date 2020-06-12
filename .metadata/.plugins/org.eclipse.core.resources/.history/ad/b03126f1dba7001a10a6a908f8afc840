@@ -1,0 +1,51 @@
+package com.tcs.entites;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "CONTACTS_MASTER")
+public class ContactMaster {
+	@Id
+	@Column(name = "CONTACT_ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	protected int id;
+	@Column(name="CONTACT_NAME")
+	protected String contactName;
+	@Column(name = "CONTACT_NUMBER")
+	protected long contactNumber;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getContactName() {
+		return contactName;
+	}
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+	}
+	public long getContactNumber() {
+		return contactNumber;
+	}
+	public void setContactNumber(long contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+	@Override
+	public String toString() {
+		return "ContactMaster [id=" + id + ", contactName=" + contactName + ", contactNumber=" + contactNumber + "]";
+	}
+	
+	
+	
+
+}

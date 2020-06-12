@@ -1,0 +1,58 @@
+package com.tcs;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.tcs.source.Calculator;
+
+import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
+
+@SpringBootTest
+class ApplicationTests {
+	
+	private static Calculator calc=null;
+
+	@BeforeAll
+	public static void init() {
+		calc=new Calculator();
+		
+	}
+	
+	@Test
+	void testadd_01() {
+		Integer actual = calc.add(100, 200);
+		Integer expected=300;
+		assertEquals(expected, actual);
+		
+	
+	}
+	
+	@Test
+	void testadd_02() {
+		Integer actual = calc.add(200, 200);
+		Integer expected=400;
+		assertEquals(expected, actual);
+		
+	
+	}
+	@Test
+	@IgnoreForBinding
+	void testadd_03() {
+		Integer actual = calc.add(100, 200);
+		Integer expected=300;
+		assertEquals(expected, actual);
+		
+	
+	}
+	@AfterAll
+	public static void destroy() {
+		calc=null;
+		
+	}
+	
+
+}

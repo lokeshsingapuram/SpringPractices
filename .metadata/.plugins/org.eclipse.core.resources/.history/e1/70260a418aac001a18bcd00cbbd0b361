@@ -1,0 +1,17 @@
+package com.tcs.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+@Controller
+public class MultiActionController {
+	
+	
+	public ModelAndView displayMsg() {
+		ModelAndView view=new  ModelAndView();
+		view.addObject("msg", "Hi greetings for the day");
+		view.setViewName("index");
+		return view;
+	}
+
+}

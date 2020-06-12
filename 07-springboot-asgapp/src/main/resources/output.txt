@@ -1,0 +1,4 @@
+100,computer,24000.00
+101,Laptop,45000.00
+102,ram,4500.00
+103,docking station,30000.00
