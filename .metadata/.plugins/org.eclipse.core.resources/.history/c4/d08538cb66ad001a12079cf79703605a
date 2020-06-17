@@ -1,0 +1,17 @@
+package com.tcs.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+
+@Controller
+public class TextController {
+	
+	public String displayController(Model model) {
+		
+		String txtMsg="hi welcome to this spring boot we are going good";
+		model.addAttribute("msg",txtMsg);
+		return "index.jsp";
+		
+	}
+
+}

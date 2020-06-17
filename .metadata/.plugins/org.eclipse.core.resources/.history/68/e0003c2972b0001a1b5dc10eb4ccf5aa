@@ -1,0 +1,11 @@
+package com.tcs;
+
+public class Snippet {
+	@RequestMapping("/index")
+		public String homePage_01(Model model) {
+			
+			model.addAttribute("msg", "Hi good morning how are you...!");
+			return "index";
+		}
+}
+

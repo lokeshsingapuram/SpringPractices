@@ -1,0 +1,21 @@
+package com.tcs.entites;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "CONTACTS_MASTER")
+public class ContactMaster {
+	
+	@Id
+	private int id;
+	@Column
+	private String contactName;
+	private long contactNumber;
+
+}

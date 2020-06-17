@@ -1,0 +1,7 @@
+package com.tcs.repositoies;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface ContactMasterRepo extends CrudRepository<T, ID> {
+
+}

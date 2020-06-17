@@ -1,0 +1,16 @@
+package com.tcs.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.Data;
+
+@Entity
+@Data
+public class Contact {
+
+	@Id
+	private int contactId;
+	private String contactName;
+	private String contactAddress;
+}

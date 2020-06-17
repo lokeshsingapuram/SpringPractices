@@ -1,0 +1,30 @@
+package com.tcs;
+
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+
+import com.tcs.entities.Contact;
+import com.tcs.repositories.ContactRepo;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+		ContactRepo bean = context.getBean(ContactRepo.class);
+		int pageSize=3;
+		int pageNo=0;
+		PageRequest pageReq=PageRequest.of(pageNo,pageSize);
+		Page<Contact> pageData=bean.findAll(pageReq);
+		List<Contact> list=pageData.getContent();
+		list.forEach(entity->{
+			System.out.println(entity);
+		});
+	}
+
+}

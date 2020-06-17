@@ -1,0 +1,19 @@
+package com.tcs.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class TextController {
+	
+	@RequestMapping("/disp")
+	public String displayController(Model model) {
+		
+		String txtMsg="hi welcome to this spring boot we are going good";
+		model.addAttribute("msg",txtMsg);
+		return "index.jsp";
+		
+	}
+
+}

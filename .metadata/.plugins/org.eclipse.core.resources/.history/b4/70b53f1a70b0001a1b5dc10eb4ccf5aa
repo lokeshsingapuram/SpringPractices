@@ -1,0 +1,27 @@
+package com.tcs.controllers;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/home")
+public class HomeController {
+	
+	@RequestMapping("/index")
+	public String homePage(Model model) {
+		
+		model.addAttribute("msg", "Hi good morning...!");
+		return "index";
+	}
+	
+	@RequestMapping("/index")
+	public String homePage_01(Model model) {
+		
+		model.addAttribute("msg", "Hi good morning how are you...!");
+		return "index";
+	}
+
+
+}

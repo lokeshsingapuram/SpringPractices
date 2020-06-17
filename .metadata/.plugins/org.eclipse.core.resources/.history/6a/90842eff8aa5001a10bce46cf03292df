@@ -1,0 +1,19 @@
+package com.tcs.reader;
+
+
+
+import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+@Component
+public class ProductReader {
+	
+public List<ProductReader> getProductReaders(){
+	
+    Files.lines(Paths.get("input.txt")).forEach(System.out::println);
+
+}
+}

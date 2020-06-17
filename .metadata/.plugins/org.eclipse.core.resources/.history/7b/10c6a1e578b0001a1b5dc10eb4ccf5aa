@@ -1,0 +1,26 @@
+package com.tcs.repositories;
+
+import java.io.Serializable;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.tcs.entities.Contact;
+
+@Repository
+public interface ContactRepo  extends JpaRepository<Contact, Serializable>{
+	
+	@Query(value = "SELECT * FROM CONTACT WHERE CONTACT_ID=:id",nativeQuery = true)
+	List<Contact> findcontactById(Integer id);
+	@Query(value = "UPDATE CONTACT SET CONTACT_NAME=:name WHERE CONTACT_ID=:ID",nativeQuery = true)
+	List<Contact> updateContactName(String name,Integer id);
+	/*
+	 * @Query(value =
+	 * "INSERT INTO CONTACT(CONTACT_ID,CONTACT_NAME,CONTACT_ADDRESS) VALUES(:id, :name, :address)"
+	 * ,nativeQuery = true) List<Contact> insertContact(@Param("id")Integer
+	 * id,@Param("name") String name,@Param("address")String address);
+	 */
+
+}

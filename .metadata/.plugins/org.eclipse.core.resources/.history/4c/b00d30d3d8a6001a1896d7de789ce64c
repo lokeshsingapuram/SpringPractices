@@ -1,0 +1,22 @@
+package com.tcs.reader;
+
+
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.springframework.stereotype.Component;
+@Component
+public class ProductReader {
+
+	
+public List<String> getProductReaders() throws IOException{
+	
+Stream<String> lines=Files.lines(Paths.get("src\\main\\resources\\input.txt"));
+return productReaders;
+}
+}

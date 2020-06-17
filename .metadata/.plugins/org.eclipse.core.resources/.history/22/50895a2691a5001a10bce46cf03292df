@@ -1,0 +1,17 @@
+package com.tcs.writer;
+
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ProductWriter {
+	
+	public void saveProduct(List<String> productList){
+		
+		
+		
+		
+	}
+
+}

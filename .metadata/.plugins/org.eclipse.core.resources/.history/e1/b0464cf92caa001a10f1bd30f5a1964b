@@ -1,0 +1,19 @@
+package com.tcs.entities;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.Data;
+
+@Entity
+@Data
+public class Insurance {
+	@Id
+	protected int id;
+    protected String insuranceName;
+    protected int maxAge;
+    protected int minAge;
+    protected int minInsuredAmount;
+    protected int maxInsuredAmount;
+
+}
