@@ -1,0 +1,26 @@
+package com.tcs;
+
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.data.domain.Sort;
+
+import com.tcs.entities.Insurance;
+import com.tcs.repositories.InsuranceRepo;
+
+@SpringBootApplication
+public class Application {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+		InsuranceRepo bean = context.getBean(InsuranceRepo.class);
+		List<Insurance> findAll = bean.findAll(Sort.by("minInsuredAmount","minAge").descending());
+		/*
+		 * findAll.forEach(entity->{ System.out.println(findAll); });
+		 */
+		System.out.println(findAll);
+	}
+
+}
